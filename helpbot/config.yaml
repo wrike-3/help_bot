@@ -1,0 +1,10 @@
+log:
+  filename: 'helpbot.log'
+token: ''
+vectorizer: 'helpbot/bin/vectorizer.joblib'
+encoder_chapter: 'helpbot/bin/chapter_encoder.joblib'
+encoder_section: 'helpbot/bin/section_encoder.joblib'
+encoder_paper: 'helpbot/bin/paper_encoder.joblib'
+model_chapter: 'helpbot/bin/ovr_chapter.joblib'
+model_section: 'helpbot/bin/ovr_section.joblib'
+model_paper: 'helpbot/bin/ovr_paper.joblib'
