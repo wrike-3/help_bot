@@ -49,7 +49,6 @@ def get_answer(query, use_lower=True, use_keywords=False, use_remove_stopwords=F
             return bert_emb_baseline.get_answer(query)
         if model_name == ModelNames.BPE:
             return bpe_baseline.get_answer(query)
-
         if model_name == ModelNames.TFIDF:
             return tfidf_baseline.get_answer(query)
     except Exception as ex:
