@@ -15,13 +15,14 @@ class ConfigBot():
     def read(self, values):
         self.log = ConfigLog(values['log'])
         self.token = values['token']
-        self.vectorizer_path = values['vectorizer']
-        self.encoder_chapter = values['encoder_chapter']
-        self.encoder_section = values['encoder_section']
-        self.encoder_paper = values['encoder_paper']
-        self.model_chapter = values['model_chapter']
-        self.model_section = values['model_section']
-        self.model_paper = values['model_paper']
+        self.data = values['data']
+        self.vectorizer = values['vectorizer']
+        self.section_1_encoder = values['section_1_encoder']
+        self.section_2_encoder = values['section_2_encoder']
+        self.section_3_encoder = values['section_3_encoder']
+        self.section_1_ovr = values['section_1_ovr']
+        self.section_2_ovr = values['section_2_ovr']
+        self.section_3_ovr = values['section_3_ovr']
 
 
 class ConfigLog:
