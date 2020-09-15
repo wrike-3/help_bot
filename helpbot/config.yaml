@@ -1,7 +1,7 @@
 log:
   filename: 'helpbot.log'
 token: ''
-data: 'helpbot/data/help_title_v2.csv'
+data: 'data/help_title_v2.csv'
 vectorizer: 'helpbot/bin/vectorizer.joblib'
 section_1_encoder: 'helpbot/bin/section_1_encoder.joblib'
 section_2_encoder: 'helpbot/bin/section_2_encoder.joblib'

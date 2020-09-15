@@ -35,7 +35,8 @@ What about sentence2? thing2_title. thing2. https://wrike.com/help.
             add_doc_to_index(d)
 
     def test_baselines(self):
-        questions = ['gantt chart', 'export report', 'support MS', 'share data', 'Machine Learning',
+        questions = ['gantt chart', 'export report', 'support MS',
+                     'share data', 'Machine Learning',
                      'how to create a task',
                      'how to reorder a subtask',
                      'where is user settings',
@@ -51,3 +52,5 @@ What about sentence2? thing2_title. thing2. https://wrike.com/help.
                 print('\t', q)
                 ans = get_answer(q, model_name=model_name)
                 print('\t\t', ans)
+                print()
+                print()
