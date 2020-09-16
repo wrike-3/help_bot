@@ -14,4 +14,3 @@ install:
   - sudo apt-get install python-dev  python-pip -y
 
 script: python -m unittest discover test
-
