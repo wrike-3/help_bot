@@ -17,6 +17,7 @@ Telegram bot for a help center
 - show history
 
 ## Finite automaton
-![](https://github.com/wrike-3/help_bot/chabot_graph.png)
+![](https://github.com/wrike-3/help_bot/blob/master/chatbot_graph.png)
+
 
 
