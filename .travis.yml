@@ -13,4 +13,5 @@ install:
   - sudo apt-get install gcc libpq-dev -y
   - sudo apt-get install python-dev  python-pip -y
 
-script: python test/TestChatBot.py
+script: python -m unittest discover test
+

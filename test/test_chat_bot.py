@@ -35,7 +35,9 @@ What about sentence2? thing2_title. thing2. https://wrike.com/help.
             add_doc_to_index(d)
 
     def test_baselines(self):
-        questions = ['gantt chart', 'export report', 'support MS',
+        questions = ['gantt chart',
+                     'export report',
+                     'support MS',
                      'share data', 'Machine Learning',
                      'how to create a task',
                      'how to reorder a subtask',
@@ -43,10 +45,14 @@ What about sentence2? thing2_title. thing2. https://wrike.com/help.
                      'how to export to Excel',
                      'how to reset a user password',
                      'how to reset a password',
-                     'how to move task to another column']
+                     'how to move task to another column'
+                     'How can I see the tasks (created in Wrike) in my Outlook calendar?',
+                     ]
 
         os.chdir(ROOT_DIR)
         for model_name in ModelNames:
+            if model_name == ModelNames.ELASTIC:
+                continue
             print(model_name.value)
             for q in questions:
                 print('\t', q)
