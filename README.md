@@ -16,3 +16,7 @@ Telegram bot for a help center
 - add new question with answer
 - show history
 
+## Finite automaton
+![](https://githubt.com/wrike-3/help_bot/chabot_graph.png)
+
+
