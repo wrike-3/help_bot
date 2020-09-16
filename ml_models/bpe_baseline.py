@@ -71,9 +71,10 @@ def load_data():
     print('faq_detailed shape', faq_detailed.shape)
     return faq, faq_detailed
 
-
-faq, faq_detailed = load_data()
-
+try:
+    faq, faq_detailed = load_data()
+except:
+    pass
 
 def get_answer(request):
     request_embedding = get_phrase_vector(request)

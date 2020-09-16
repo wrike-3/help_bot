@@ -4,7 +4,10 @@ from helpbot.conversation import AnswerHandler
 
 
 config = ConfigBot.load(ROOT_DIR, 'helpbot/config.yaml')
-answer_handler = AnswerHandler(config)
+try:
+    answer_handler = AnswerHandler(config)
+except:
+    pass
 
 
 def get_answer(query):

@@ -193,7 +193,10 @@ def prepare_indexer():
 
 
 print('load/train bert indexer started')
-indexer, df = prepare_indexer()
+try:
+    indexer, df = prepare_indexer()
+except:
+    pass
 print('bert indexer ready')
 
 

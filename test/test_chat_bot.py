@@ -51,7 +51,7 @@ What about sentence2? thing2_title. thing2. https://wrike.com/help.
 
         os.chdir(ROOT_DIR)
         for model_name in ModelNames:
-            if model_name == ModelNames.ELASTIC:
+            if model_name in [ModelNames.ELASTIC, ModelNames.BPE, ModelNames.BERT, ModelNames.TFIDF]:
                 continue
             print(model_name.value)
             for q in questions:
