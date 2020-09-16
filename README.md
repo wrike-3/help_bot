@@ -1,4 +1,5 @@
 # telegram_help_bot
+## About
 Telegram bot for a help center
 - `chatbot.py` - telegram bot for messaging
 - `support_model.py` - question answering AI
@@ -9,3 +10,8 @@ Telegram bot for a help center
 - - `tfidf` - TFIDF classification model
 - Run bot `python chatbot.py`
 - Available in telegram by address `@wrike_help_bot`
+## Features
+- answer question
+- estimate question
+- add new question with answer
+- show history
