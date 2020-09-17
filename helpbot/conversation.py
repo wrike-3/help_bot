@@ -71,7 +71,7 @@ class AnswerHandler:
             user_cleaned = self.preprocess_text(user_text)
             vectorized_user = self.vectorizer.transform([user_cleaned])
             answer = (cosine_similarity(vectorized_section, vectorized_user)[0][0],
-                      row['section_text'], row['url_4'])
+                      row['section_text'][:140], row['url_4'])
             finish_answers.append(answer)
         finish_answers.sort(key=lambda tup: tup[0], reverse=True)
         best_section = finish_answers[0]
