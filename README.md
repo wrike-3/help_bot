@@ -1,4 +1,5 @@
 # telegram_help_bot
+[![Build Status](https://travis-ci.org/wrike-3/help_bot.svg?branch=master)](https://travis-ci.org/wrike-3/help_bot)
 ## About
 Telegram bot for a help center
 - `chatbot.py` - telegram bot for messaging
