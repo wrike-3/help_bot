@@ -21,3 +21,6 @@ df_info
 #     class1
 
 # Machine learning
+# %%
+qna = pd.read_csv('data/qna.csv', sep=';')
+qna

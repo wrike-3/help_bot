@@ -86,7 +86,7 @@ def process_input_files():
 
 def print_res(res):
     if len(res['hits']['hits']) > 0:
-        ans_list = ["Probably you mean: "]
+        ans_list = ["Here you can find the instructions: "]
         for i, item in enumerate(res['hits']['hits']):
             if i > MAX_ANSWER_COUNT:
                 break

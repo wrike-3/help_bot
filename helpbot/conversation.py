@@ -74,6 +74,6 @@ class AnswerHandler:
                       row['section_text'][:140], row['url_4'])
             finish_answers.append(answer)
         finish_answers.sort(key=lambda tup: tup[0], reverse=True)
-        best_section = finish_answers[0]
-        answer_text = f'{best_section[1]}. URL: {best_section[2]}'
+        # best_section = finish_answers[0]
+        answer_text = '\n'.join([f'{best_section[1]}. URL: {best_section[2]}' for best_section in finish_answers[:3]])
         return answer_text
