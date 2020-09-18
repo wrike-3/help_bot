@@ -54,3 +54,5 @@ for d in dialogs:
     questions, answers = parse_dialog(d)
     print('questions: ', questions)
     print('answers:', answers)
+    print()
+
