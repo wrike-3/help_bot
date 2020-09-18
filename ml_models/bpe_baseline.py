@@ -53,14 +53,15 @@ def load_data():
     faq = pd.read_csv(f"{DATA}/faq.csv")
     faq["subsection"] = faq["article"]
     faq["article"] = faq["text"]
-    faq = faq[["section", "subsection", "article"]]
+    faq = faq[["section", "subsection", "article", 'article_link']]
 
     faq["subsubsection"] = faq.article.str.split("\n").apply(lambda x: x[3])
-    faq = faq[["section", "subsection", "subsubsection", "article"]]
+    faq = faq[["section", "subsection", "subsubsection", "article", 'article_link']]
 
     faq["list_of_subsubsubsections"] = faq.article.apply(extract_features)
     print(f"{len(faq.loc[faq.list_of_subsubsubsections.str.len() < 1])} articles without headlines.")
-    faq.loc[faq.list_of_subsubsubsections.str.len() < 1, "list_of_subsubsubsections"] = faq.loc[faq.list_of_subsubsubsections.str.len() < 1, "subsubsection"].apply(lambda x: [x])
+    faq.loc[faq.list_of_subsubsubsections.str.len() < 1, "list_of_subsubsubsections"] = faq.loc[
+        faq.list_of_subsubsubsections.str.len() < 1, "subsubsection"].apply(lambda x: [x])
     faq["subsubsection_embedding"] = faq["list_of_subsubsubsections"].apply(get_list_vector)
 
     faq_detailed = faq.copy().explode("list_of_subsubsubsections")
@@ -71,16 +72,18 @@ def load_data():
     print('faq_detailed shape', faq_detailed.shape)
     return faq, faq_detailed
 
+
 try:
     faq, faq_detailed = load_data()
 except:
     pass
 
+
 def get_answer(request):
     request_embedding = get_phrase_vector(request)
     faq["score"] = faq["subsubsection_embedding"].apply(lambda x: sum(x * request_embedding))
     faq.sort_values("score", ascending=False, inplace=True)
-    faq_sub = faq[["section", "subsection", "subsubsection", "list_of_subsubsubsections", "score"]].head(3)
+    faq_sub = faq[["section", "subsection", "subsubsection", "list_of_subsubsubsections", "score", 'article_link']].head(3)
     # display(faq[["section", "subsection", "subsubsection", "list_of_subsubsubsections", "score"]].head(5))
 
     # print()
@@ -88,7 +91,8 @@ def get_answer(request):
     # faq_detailed["score"] = faq_detailed["subsubsubsection_embedding"].apply(lambda x: sum(x * request_embedding))
     # faq_detailed.sort_values("score", ascending=False, inplace=True)
     # faq_det_sub = faq_detailed[["section", "subsection", "subsubsection", "subsubsubsection", "score"]].head(3)
-    return '\n'.join((faq_sub['section'] + ' / ' + faq_sub['subsection'] + ' / ' + faq_sub['subsubsection']).values)
+    return '\n'.join((faq_sub['section'] + ' / ' + faq_sub['subsection'] +
+                      ' / ' + faq_sub['subsubsection'] + ' URL: ' + faq_sub['article_link']).values)
 
 
 def main():
