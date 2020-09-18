@@ -6,7 +6,6 @@ import numpy as np
 import pandas as pd
 
 from bpemb import BPEmb
-from IPython.display import display
 from config import DATA
 
 bpemb = BPEmb(lang="en", dim=300)
